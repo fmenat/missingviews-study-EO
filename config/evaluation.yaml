@@ -1,0 +1,14 @@
+output_dir_folder: /home/mena/OneDrive/Publications/missing_2024_replica
+input_dir_folder: /home/mena/OneDrive/Publications/data/pixel_all
+
+data_name: cropharvest_multi_train
+#data_name: cropharvest_binary_train
+#data_name: lfmc_train 
+#data_name: yield_cereals_train 
+
+methods_to_plot: null #consider all
+
+plot_runs: False
+
+#task_type: regression
+task_type: classification
