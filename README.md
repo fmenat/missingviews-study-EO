@@ -36,6 +36,19 @@ python evaluate_predictions.py -s config/evaluation.yaml
 python evaluate_rob_pred.py -s config/evaluation.yaml
 ```
 
-## Citation
-Not yet
+## Source
+* [Preprint](https://arxiv.org/abs/2403.14297v1)
+* [Final published version]()
 
+## Citation
+Mena, F., et al. "Impact Assessment of Missing Data in Model Predictions for Earth Observation Applications." *IEEE International Geoscience and Remote Sensing Symposium (IGARSS)* (2024).
+
+> Bibtex
+```
+@inproceedings{mena2023comparativeassessmentmultiview,
+  title = {Impact Assessment of Missing Data in Model Predictions for {Earth} Observation Applications},
+  booktitle = {{IEEE International Geoscience} and {Remote Sensing Symposium} ({IGARSS})},
+  author = {Mena, Francisco and Arenas, Diego and Charfuelan, Marcela and Nuske, Marlon and Dengel, Andreas},
+  date = {2024},
+  publisher = {{IEEE}}
+```
