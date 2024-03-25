@@ -1,5 +1,5 @@
-output_dir_folder: /home/mena/OneDrive/Publications/missing_2024_replica
-input_dir_folder: /home/mena/OneDrive/Publications/data/pixel_all
+output_dir_folder: /path/to/storage/files
+input_dir_folder: /path/to/data
 
 data_name: cropharvest_multi_train
 #data_name: cropharvest_binary_train

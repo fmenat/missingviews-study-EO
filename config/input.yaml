@@ -1,12 +1,11 @@
 output_dir_folder: /path/to/storage/files
 input_dir_folder: /path/to/data
-additional_method_name: -tempcnn
 
 data_name: cropharvest_multi_train
 task_type: classification
 
 training: 
-  max_epochs: 1000
+  max_epochs: 1
   batch_size: 128
   emb_dim: 128 
   early_stop_args: 

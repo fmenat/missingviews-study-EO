@@ -13,7 +13,7 @@ import pytorch_lightning as pl
 
 from mvlearning.fusion import InputFusion, SingleViewPool, FeatureFusion, FeatureFusionMultiLoss, DecisionFusion, DecisionFusionMultiLoss, HybridFusion_FD
 from mvlearning.single.models import create_model
-from mvlearning.fusion_module import FusionModuleMissing
+from mvlearning.merge_module import MergeModule
 from mvlearning.utils import get_dic_emb_dims
 
 from src.datasets.utils import _to_loader
@@ -49,7 +49,7 @@ def log_additional_mlflow(mlflow_model, trainer, model, architecture):
     mlflow_model.experiment.log_param(mlflow_model.run_id, "type_fusion", model.where_fusion)
     mlflow_model.experiment.log_param(mlflow_model.run_id, "feature_pool", model.feature_pool)
     if model.where_fusion =="feature":
-        mlflow_model.experiment.log_param(mlflow_model.run_id, "joint_dim", model.fusion_module.get_info_dims()["joint_dim"] )
+        mlflow_model.experiment.log_param(mlflow_model.run_id, "joint_dim", model.merge_module.get_info_dims()["joint_dim"] )
         
 def InputFusion_train(train_data: dict, val_data = None,
                 data_name="", method_name="", run_id=0, fold_id=0, output_dir_folder="", run_id_mlflow=None,
@@ -135,31 +135,31 @@ def MultiFusion_train(train_data: dict, val_data = None,
     
     if method.get("hybrid"):
         method["agg_args"]["emb_dims"] = get_dic_emb_dims(views_encoder)
-        fusion_module_feat = FusionModuleMissing(**method["agg_args"])
-        input_dim_task_mapp = fusion_module_feat.get_info_dims()["joint_dim"]
+        merge_module_feat = MergeModule(**method["agg_args"])
+        input_dim_task_mapp = merge_module_feat.get_info_dims()["joint_dim"]
         if method["agg_args"].get("adaptive"):
             method["agg_args"]["emb_dims"] = [architecture["n_labels"] for _ in range(len(views_encoder))]
-            fusion_module_deci = FusionModuleMissing(**method["agg_args"])
+            merge_module_deci = MergeModule(**method["agg_args"])
         else:
-            fusion_module_deci = None
+            merge_module_deci = None
 
         predictive_model = create_model(input_dim_task_mapp, architecture["n_labels"], **architecture["predictive_model"], encoder=False) #default is mlp
-        model = HybridFusion_FD(views_encoder, fusion_module_feat, predictive_model,fusion_module_deci=fusion_module_deci, loss_function=training["loss_function"])
+        model = HybridFusion_FD(views_encoder, merge_module_feat, predictive_model,merge_module_deci=merge_module_deci, loss_function=training["loss_function"])
 
     elif method["feature"]:
         method["agg_args"]["emb_dims"] = get_dic_emb_dims(views_encoder)
-        fusion_module = FusionModuleMissing(**method["agg_args"])
-        input_dim_task_mapp = fusion_module.get_info_dims()["joint_dim"]
+        merge_module = MergeModule(**method["agg_args"])
+        input_dim_task_mapp = merge_module.get_info_dims()["joint_dim"]
 
         predictive_model = create_model(input_dim_task_mapp, architecture["n_labels"], **architecture["predictive_model"], encoder=False)  #default is mlp
         if "multiloss_weights" in training:
-            model = FeatureFusionMultiLoss(views_encoder, fusion_module, predictive_model, loss_function=training["loss_function"], multiloss_weights=training["multiloss_weights"])
+            model = FeatureFusionMultiLoss(views_encoder, merge_module, predictive_model, loss_function=training["loss_function"], multiloss_weights=training["multiloss_weights"])
         else:
-            model = FeatureFusion(views_encoder, fusion_module, predictive_model, loss_function=training["loss_function"])
+            model = FeatureFusion(views_encoder, merge_module, predictive_model, loss_function=training["loss_function"])
 
     else:
         method["agg_args"]["emb_dims"] = [architecture["n_labels"] for _ in range(len(views_encoder))]
-        fusion_module = FusionModuleMissing(**method["agg_args"])
+        merge_module = MergeModule(**method["agg_args"])
 
         pred_base = create_model(emb_dim, architecture["n_labels"], **architecture["predictive_model"], encoder=False )  #default is mlp
         prediction_models = {}
@@ -172,9 +172,9 @@ def MultiFusion_train(train_data: dict, val_data = None,
             prediction_models[view_n] = torch.nn.Sequential(views_encoder[view_n], pred_)
             prediction_models[view_n].get_output_size = pred_.get_output_size
         if "multiloss_weights" in training:
-            model = DecisionFusionMultiLoss(view_encoders=prediction_models, fusion_module=fusion_module, loss_function=training["loss_function"], multiloss_weights=training["multiloss_weights"])
+            model = DecisionFusionMultiLoss(view_encoders=prediction_models, merge_module=merge_module, loss_function=training["loss_function"], multiloss_weights=training["multiloss_weights"])
         else:
-            model = DecisionFusion(view_encoders=prediction_models, fusion_module=fusion_module, loss_function=training["loss_function"])
+            model = DecisionFusion(view_encoders=prediction_models, merge_module=merge_module, loss_function=training["loss_function"])
 
     if "missing_method" in training:
         model.set_missing_info(**training.get("missing_method"))
