@@ -4,6 +4,9 @@
 ### Data
 Preprocessed data can be accessed at: [Link](https://cloud.dfki.de/owncloud/index.php/s/yxAfArTXkMF7nM2)
 
+### Additional source
+We use the following source for multi-view learning: [https://github.com/fmenat/mvlearning](https://github.com/fmenat/mvlearning)
+
 ### Training
 * To train a single-view learning model (e.g. Input-level fusion):  
 ```
