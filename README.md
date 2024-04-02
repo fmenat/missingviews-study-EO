@@ -48,10 +48,11 @@ Mena, F., et al. "Impact Assessment of Missing Data in Model Predictions for Ear
 
 > Bibtex
 ```
-@inproceedings{mena2023comparativeassessmentmultiview,
+@inproceedings{mena2024igarss,
   title = {Impact Assessment of Missing Data in Model Predictions for {Earth} Observation Applications},
   booktitle = {{IEEE International Geoscience} and {Remote Sensing Symposium} ({IGARSS})},
   author = {Mena, Francisco and Arenas, Diego and Charfuelan, Marcela and Nuske, Marlon and Dengel, Andreas},
-  date = {2024},
-  publisher = {{IEEE}}
+  year = {2024},
+  publisher = {{IEEE}},
+}
 ```
