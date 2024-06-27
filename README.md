@@ -1,5 +1,7 @@
 # Missing Views impact on Multi-view Learning (MVL) models with EO applications
- Public repository of our work in missing views for EO applications.
+<a href="https://github.com/fmenat/mvlearning">  <img src="https://img.shields.io/badge/Package-mvlearning-blue"/>  </a> [![paper](https://img.shields.io/badge/arXiv-2308.05407-D12424)](https://www.arxiv.org/abs/2308.05407) 
+
+Public repository of our work in missing views for EO applications.
 
 ### Data
 Preprocessed data can be accessed at: [Link](https://cloud.dfki.de/owncloud/index.php/s/yxAfArTXkMF7nM2)
@@ -39,17 +41,19 @@ python evaluate_predictions.py -s config/evaluation.yaml
 python evaluate_rob_pred.py -s config/evaluation.yaml
 ```
 
-## Source
-* [Preprint](https://arxiv.org/abs/2403.14297v1)
-* [Final published version]()
 
-## Citation
-Mena, F., et al. "Impact Assessment of Missing Data in Model Predictions for Earth Observation Applications." *IEEE International Geoscience and Remote Sensing Symposium (IGARSS)* (2024).
+# :scroll: Source
 
-> Bibtex
-```
+Public repository of our IGARSS 2023 paper.
+* :unlock: [Arxiv](https://arxiv.org/abs/2403.14297v1)
+
+
+# 🖊️ Citation
+
+Mena, Francisco, et al. "*Impact assessment of missing data in model predictions for Earth observation applications*." IEEE International Geoscience and Remote Sensing Symposiums (IGARSS), 2024.
+```bibtex
 @inproceedings{mena2024igarss,
-  title = {Impact Assessment of Missing Data in Model Predictions for {Earth} Observation Applications},
+  title = {Impact assessment of missing data in model predictions for {Earth} observation applications},
   booktitle = {{IEEE International Geoscience} and {Remote Sensing Symposium} ({IGARSS})},
   author = {Mena, Francisco and Arenas, Diego and Charfuelan, Marcela and Nuske, Marlon and Dengel, Andreas},
   year = {2024},
