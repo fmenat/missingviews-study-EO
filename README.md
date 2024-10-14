@@ -45,8 +45,10 @@ python evaluate_rob_pred.py -s config/evaluation.yaml
 # :scroll: Source
 
 Public repository of our IGARSS 2023 paper.
+* :lock: [Final published version](https://doi.org/10.1109/IGARSS53475.2024.10640375)
 * :unlock: [Arxiv](https://arxiv.org/abs/2403.14297v1)
-
+* [Presentation](https://github.com/fmenat/fmenat/blob/main/presentations/2024_IGARSS_Missing.pdf)
+* 
 
 # 🖊️ Citation
 
