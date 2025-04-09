@@ -1,6 +1,8 @@
 # Impact of missing views in multi-view learning models
 <a href="https://github.com/fmenat/mvlearning">  <img src="https://img.shields.io/badge/Package-mvlearning-blue"/>  </a> [![paper](https://img.shields.io/badge/arXiv-2403.14297v1-D12424)](https://www.arxiv.org/abs/2403.14297v1) 
 
+![missing views](imgs/missing_views.png)
+
 A public repository of our work in missing views for Earth Observation (EO) applications.
 
 ### Data
@@ -44,7 +46,7 @@ python evaluate_rob_pred.py -s config/evaluation.yaml
 
 # :scroll: Source
 
-Public repository of our IGARSS 2023 paper.
+Public repository of our IGARSS 2024 paper.
 * :lock: [Final published version](https://doi.org/10.1109/IGARSS53475.2024.10640375)
 * :unlock: [Arxiv](https://arxiv.org/abs/2403.14297v1)
 * [Presentation](https://github.com/fmenat/fmenat/blob/main/presentations/2024_IGARSS_Missing.pdf)
