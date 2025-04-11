@@ -1,7 +1,7 @@
 # Impact of missing views in multi-view learning models
 <a href="https://github.com/fmenat/mvlearning">  <img src="https://img.shields.io/badge/Package-mvlearning-blue"/>  </a> [![paper](https://img.shields.io/badge/arXiv-2403.14297v1-D12424)](https://www.arxiv.org/abs/2403.14297v1) 
 
-![missing views](imgs/missing_views.png)
+![missing views](imgs/missing_views.jpg)
 
 A public repository of our work in missing views for Earth Observation (EO) applications.
 
