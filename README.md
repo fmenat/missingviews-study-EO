@@ -1,9 +1,14 @@
 # Impact of missing views in multi-view learning models
-<a href="https://github.com/fmenat/mvlearning">  <img src="https://img.shields.io/badge/Package-mvlearning-blue"/>  </a> [![paper](https://img.shields.io/badge/arXiv-2403.14297v1-D12424)](https://www.arxiv.org/abs/2403.14297v1) 
+<a href="https://github.com/fmenat/mvlearning">  <img src="https://img.shields.io/badge/Package-mvlearning-blue"/>  </a> 
+[![paper](https://img.shields.io/badge/arXiv-2403.14297v1-D12424)](https://www.arxiv.org/abs/2403.14297v1) 
+[![DOI:IGARSS53475.2024.10640375](http://img.shields.io/badge/DOI-IGARSS53475.2024.10640375-blue.svg)](https://doi.org/10.1109/IGARSS53475.2024.10640375)
+
+> Public repository of our work [*Impact assessment of missing data in model predictions for Earth observation applications*](https://doi.org/10.1109/IGARSS53475.2024.10640375)
+---
 
 ![missing views](imgs/missing_views.jpg)
 
-A public repository of our work in missing views for Earth Observation (EO) applications.
+This code assesses the effect of missing views during inference in ML models for Earth Observation (EO) applications.
 
 ### Data
 Preprocessed data can be accessed at: [Link](https://cloud.dfki.de/owncloud/index.php/s/yxAfArTXkMF7nM2)
@@ -44,14 +49,7 @@ python evaluate_rob_pred.py -s config/evaluation.yaml
 ```
 
 
-# :scroll: Source
-
-Public repository of our IGARSS 2024 paper.
-* :lock: [Final published version](https://doi.org/10.1109/IGARSS53475.2024.10640375)
-* :unlock: [Arxiv](https://arxiv.org/abs/2403.14297v1)
-* [Presentation](https://github.com/fmenat/fmenat/blob/main/presentations/2024_IGARSS_Missing.pdf)
-
-# 🖊️ Citation
+# 🖊️ Citation and more
 
 Mena, Francisco, et al. "*Impact assessment of missing data in model predictions for Earth observation applications*." IEEE International Geoscience and Remote Sensing Symposiums (IGARSS), 2024.
 ```bibtex
@@ -61,5 +59,8 @@ Mena, Francisco, et al. "*Impact assessment of missing data in model predictions
   author = {Mena, Francisco and Arenas, Diego and Charfuelan, Marcela and Nuske, Marlon and Dengel, Andreas},
   year = {2024},
   publisher = {{IEEE}},
+  doi={10.1109/IGARSS53475.2024.10640375}
 }
 ```
+> [!NOTE]
+> * [Presentation](https://github.com/fmenat/fmenat/blob/main/presentations/2024_IGARSS_Missing.pdf)
